@@ -1422,12 +1422,11 @@
     'use strict';
 
     /* =============================================
-       GOOGLE SHEETS EXPORT
-       TODO: Sem vložit webhook URL z Make/Zapier/n8n pro ukládání do Google Sheets.
-       Návod Make: Scenarios → Create → Webhook → JSON → Google Sheets (Add Row)
-       Návod Zapier: Zap → Trigger: Webhooks → Action: Google Sheets (Create Spreadsheet Row)
+       GOOGLE SHEETS EXPORT — Google Apps Script webhook
+       Sekundární ukládání pro interní evidenci.
+       Neblokuje hlavní flow, chyba se uživateli nezobrazuje.
     ============================================= */
-    var GOOGLE_SHEETS_WEBHOOK_URL = 'DOPLNIT_WEBHOOK_URL_Z_MAKE_NEBO_ZAPIER';
+    var GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxrKv9uGpF7leEVrdN-kzet_2jrdQRuuOK9eoE0wZYtyfr9tLvBx9a1KHuMVWQB-HI/exec';
 
     /* =============================================
        TRACKING / ANALYTIKA
@@ -1649,15 +1648,28 @@
         // EVENT: quiz_submit — úspěšné odeslání
         trackEvent('quiz_submit', { timestamp: timestamp });
 
-        // Google Sheets export — neblokující, chyba nezastaví thank-you stav
-        if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL !== 'DOPLNIT_WEBHOOK_URL_Z_MAKE_NEBO_ZAPIER') {
-          fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+        // Google Sheets — sekundární export, neblokující, chyba se uživateli nezobrazuje
+        try {
+          await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
             method:  'POST',
+            mode:    'no-cors',
             headers: { 'Content-Type': 'application/json' },
-            body:    JSON.stringify(formData),
-          }).catch(function (sheetsErr) {
-            console.warn('Google Sheets webhook error:', sheetsErr.message);
+            body:    JSON.stringify({
+              submitted_at: timestamp,
+              first_name:   formData.first_name,
+              last_name:    formData.last_name,
+              email:        formData.email,
+              phone:        formData.phone,
+              question_1:   formData.question_1,
+              question_2:   formData.question_2,
+              question_3:   formData.question_3,
+              consent_gdpr: formData.consent_gdpr,
+              user_agent:   formData.user_agent,
+              source:       formData.source,
+            }),
           });
+        } catch (sheetsErr) {
+          console.warn('Google Sheets webhook error:', sheetsErr);
         }
 
         showThankYou();
