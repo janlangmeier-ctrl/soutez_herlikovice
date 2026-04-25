@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soutěž o pobyt v Krkonoších | Langmeier & Co.</title>
+  <meta name="description" content="Realitní kvíz pro klienty Langmeier & Co. Vyhrajte pobyt na 2 noci pro 2 osoby v resortu Mlýn Herlíkovice v Krkonoších." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- =============================================
+       ANALYTICS — TODO: aktivovat před spuštěním
+  ============================================= -->
+
+  <!-- TODO: Google Analytics 4
+       Nahraď G-XXXXXXXXXX svým Measurement ID z GA4 → Admin → Data Streams.
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- TODO: Meta Pixel (Facebook / Instagram)
+       Nahraď YOUR_PIXEL_ID svým Pixel ID z Meta Events Manager.
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  -->
+
+  <!-- TODO: LinkedIn Insight Tag
+       Nahraď YOUR_PARTNER_ID svým Partner ID z LinkedIn Campaign Manager.
+  <script type="text/javascript">
+    _linkedin_partner_id = "YOUR_PARTNER_ID";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+    (function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];
+    var b=document.createElement("script");b.type="text/javascript";b.async=true;
+    b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b,s)})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" alt=""
+         src="https://px.ads.linkedin.com/collect/?pid=YOUR_PARTNER_ID&fmt=gif" />
+  </noscript>
+  -->
+
+  <style>
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy:       #1a2332;
+      --navy-light: #253348;
+      --forest:     #2d4a3e;
+      --forest-mid: #3d6b5a;
+      --sage:       #7aab96;
+      --tan:        #a08060;
+      --beige:      #e8e0d5;
+      --cream:      #f5f2ee;
+      --white:      #ffffff;
+      --text-main:  #1a2332;
+      --text-muted: #5a6475;
+      --text-light: #8a95a3;
+      --border:     #d8d2ca;
+      --cta:        #2d6a4f;
+      --cta-hover:  #235940;
+      --error:      #c0392b;
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --shadow-sm:  0 2px 8px rgba(26,35,50,0.08);
+      --shadow-md:  0 4px 20px rgba(26,35,50,0.12);
+      --shadow-lg:  0 8px 40px rgba(26,35,50,0.16);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans:  'Inter', system-ui, sans-serif;
+      --transition: 0.22s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    h1, h2, h3 {
+      font-family: var(--font-serif);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 0.75rem;
+    }
+
+    /* =============================================
+       LAYOUT HELPERS
+    ============================================= */
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .container--wide {
+      max-width: 1100px;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* =============================================
+       NAVIGATION BAR
+    ============================================= */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(26,35,50,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav__logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav__cta {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--sage);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color var(--transition);
+    }
+
+    .nav__cta:hover { color: var(--white); }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Pictures/hlavn%C3%AD%20foto%20herl%C3%ADkovice.jpeg');
+      background-size: cover;
+      background-position: center 40%;
+      filter: brightness(0.42);
+      z-index: 0;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(26,35,50,0.55) 0%,
+        rgba(26,35,50,0.25) 50%,
+        rgba(45,74,62,0.45) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 8rem 1.25rem 5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero__badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      color: var(--white);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--sage);
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--cta);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 1rem 2.2rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px rgba(45,106,79,0.4);
+      letter-spacing: 0.01em;
+    }
+
+    .hero__cta:hover {
+      background: var(--cta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(45,106,79,0.5);
+    }
+
+    .hero__cta svg {
+      transition: transform var(--transition);
+    }
+
+    .hero__cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    .hero__scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    .hero__scroll-hint svg {
+      opacity: 0.5;
+    }
+
+    /* =============================================
+       INFO SECTION
+    ============================================= */
+    .info {
+      background: var(--white);
+    }
+
+    .info__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .info__text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .info__text p:last-child { margin-bottom: 0; }
+
+    .info__image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+    }
+
+    .info__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .info__image:hover img {
+      transform: scale(1.03);
+    }
+
+    /* =============================================
+       PRIZE SECTION
+    ============================================= */
+    .prize {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .prize__header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .prize__header h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .prize__header p {
+      color: var(--sage);
+      font-size: 0.95rem;
+    }
+
+    .prize__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .prize__card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .prize__card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+    }
+
+    .prize__icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 1.25rem;
+      background: rgba(122,171,150,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prize__icon svg {
+      color: var(--sage);
+    }
+
+    .prize__card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .prize__card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    .prize__images {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-top: 3rem;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .prize__img-wrap {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .prize__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.75;
+      transition: opacity 0.4s, transform 0.6s;
+    }
+
+    .prize__img-wrap:hover img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* =============================================
+       QUIZ SECTION
+    ============================================= */
+    .quiz {
+      background: var(--cream);
+    }
+
+    .quiz__header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .quiz__header h2 {
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .quiz__header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Progress bar */
+    .quiz__progress {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .quiz__progress-bar {
+      flex: 1;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .quiz__progress-fill {
+      height: 100%;
+      background: var(--cta);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    .quiz__progress-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      min-width: 48px;
+      text-align: right;
+    }
+
+    /* Question */
+    .quiz__question {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem 2rem 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition);
+    }
+
+    .quiz__question.is-answered {
+      border-color: var(--sage);
+    }
+
+    .quiz__q-number {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 0.6rem;
+    }
+
+    .quiz__q-text {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      line-height: 1.45;
+    }
+
+    .quiz__options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .quiz__option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.85rem 1.1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition);
+      user-select: none;
+    }
+
+    .quiz__option:hover {
+      border-color: var(--sage);
+      background: rgba(122,171,150,0.05);
+    }
+
+    .quiz__option input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+    }
+
+    .quiz__option input[type="radio"]:checked {
+      border-color: var(--cta);
+      background: var(--cta);
+      box-shadow: inset 0 0 0 3px var(--white);
+    }
+
+    .quiz__option:has(input:checked) {
+      border-color: var(--cta);
+      background: rgba(45,106,79,0.05);
+    }
+
+    .quiz__option-label {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       FORM SECTION
+    ============================================= */
+    .form-section {
+      background: var(--white);
+    }
+
+    .form-section__header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-section__header h2 {
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-section__header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-field--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+
+    .form-field label .req {
+      color: var(--error);
+      margin-left: 2px;
+    }
+
+    .form-field input[type="text"],
+    .form-field input[type="email"],
+    .form-field input[type="tel"] {
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background: var(--cream);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-field input:focus {
+      border-color: var(--cta);
+      box-shadow: 0 0 0 3px rgba(45,106,79,0.12);
+      background: var(--white);
+    }
+
+    .form-field input.is-invalid {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+    }
+
+    .field-error {
+      font-size: 0.78rem;
+      color: var(--error);
+      display: none;
+    }
+
+    .form-field input.is-invalid + .field-error,
+    .form-field.is-invalid .field-error {
+      display: block;
+    }
+
+    /* Consent checkbox */
+    .consent-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1.25rem 1.25rem;
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-top: 0.5rem;
+      cursor: pointer;
+      transition: border-color var(--transition);
+    }
+
+    .consent-wrapper:has(input:checked) {
+      border-color: var(--cta);
+    }
+
+    .consent-wrapper input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+      position: relative;
+    }
+
+    .consent-wrapper input[type="checkbox"]:checked {
+      background: var(--cta);
+      border-color: var(--cta);
+    }
+
+    .consent-wrapper input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 6px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+
+    .consent-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .consent-text strong {
+      color: var(--text-main);
+    }
+
+    .consent-text a {
+      color: var(--cta);
+      text-decoration: none;
+    }
+
+    .consent-text a:hover { text-decoration: underline; }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* Submit */
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 1.1rem 2rem;
+      background: var(--cta);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+      box-shadow: 0 4px 20px rgba(45,106,79,0.35);
+      margin-top: 1.75rem;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: var(--cta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(45,106,79,0.45);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-submit svg {
+      transition: transform var(--transition);
+    }
+
+    .btn-submit:not(:disabled):hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Loading spinner */
+    .btn-submit .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .btn-submit.is-loading .spinner { display: block; }
+    .btn-submit.is-loading .btn-text { display: none; }
+    .btn-submit.is-loading svg { display: none; }
+
+    /* =============================================
+       THANK YOU STATE
+    ============================================= */
+    #thankyou {
+      display: none;
+      background: var(--white);
+      min-height: 60vh;
+    }
+
+    #thankyou.is-visible {
+      display: block;
+    }
+
+    .thankyou__inner {
+      text-align: center;
+      padding: 5rem 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .thankyou__icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(45,106,79,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+    }
+
+    .thankyou__icon svg {
+      color: var(--cta);
+    }
+
+    .thankyou__inner h2 {
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .thankyou__inner p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    .thankyou__divider {
+      width: 48px;
+      height: 3px;
+      background: var(--sage);
+      border-radius: 2px;
+      margin: 1.5rem auto;
+    }
+
+    .thankyou__sign {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--navy);
+      margin-top: 2rem;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.45);
+      padding: 2rem 0;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer a:hover { color: var(--sage); }
+
+    .footer__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* =============================================
+       QUIZ-FORM DIVIDER
+    ============================================= */
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    /* =============================================
+       FORM VALIDATION SUMMARY
+    ============================================= */
+    .form-error-summary {
+      display: none;
+      background: rgba(192,57,43,0.08);
+      border: 1px solid rgba(192,57,43,0.25);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.1rem;
+      font-size: 0.88rem;
+      color: var(--error);
+      margin-top: 1rem;
+    }
+
+    .form-error-summary.is-visible { display: block; }
+
+    .submit-error {
+      display: none;
+      background: rgba(192,57,43,0.07);
+      border: 1px solid rgba(192,57,43,0.3);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .submit-error.is-visible { display: block; }
+
+    .submit-error p {
+      font-size: 0.88rem;
+      color: var(--error);
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-mailto {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      background: transparent;
+      border: 1.5px solid var(--error);
+      border-radius: var(--radius-sm);
+      color: var(--error);
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .btn-mailto:hover {
+      background: var(--error);
+      color: var(--white);
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 700px) {
+      section { padding: 3.5rem 0; }
+
+      .info__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .info__image { order: -1; }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field--full { grid-column: 1; }
+
+      .prize__images {
+        grid-template-columns: 1fr;
+      }
+
+      .prize__img-wrap:not(:first-child) { display: none; }
+
+      .footer__row {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .quiz__question {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================= -->
+  <nav class="nav" role="navigation" aria-label="Hlavní navigace">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="Logo/langmeier_logo_2024_281C.jpg" alt="Langmeier & Co." />
+      </a>
+      <a href="#quiz" class="nav__cta">Začít kvíz ↓</a>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HERO
+  ============================================= -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__bg" role="img" aria-label="Horská krajina Krkonoše"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Exkluzivně pro klienty Langmeier &amp; Co.
+      </div>
+      <h1 id="hero-heading">
+        Vyhrajte pobyt<br />
+        <em>v Krkonoších</em>
+      </h1>
+      <p class="hero__sub">
+        Krátký realitní kvíz pro klienty Langmeier &amp;&nbsp;Co.
+        Odpovězte na 3&nbsp;otázky a&nbsp;zapojte se do slosování
+        o&nbsp;pobyt pro 2&nbsp;osoby.
+      </p>
+      <a href="#quiz" class="hero__cta">
+        <span>Začít kvíz</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Scrollovat</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =============================================
+       INFO
+  ============================================= -->
+  <section class="info">
+    <div class="container container--wide">
+      <div class="info__inner">
+        <div class="info__text">
+          <span class="section-label">O soutěži</span>
+          <h2 style="font-size: clamp(1.6rem,3.5vw,2.2rem); color: var(--navy); margin-bottom: 1.5rem;">
+            Poděkování za Vaši důvěru
+          </h2>
+          <p>
+            Na závěr bychom Vám rádi poděkovali za Vaši důvěru také drobnou formou.
+          </p>
+          <p>
+            Pro ty z&nbsp;Vás, kteří se zajímají o&nbsp;oblast nemovitostí i&nbsp;z&nbsp;investičního pohledu, jsme připravili krátký kvíz.
+          </p>
+          <p>
+            Jako poděkování za účast vylosujeme <strong>5&nbsp;účastníků</strong>, kteří získají pobyt v&nbsp;resortu Mlýn Herlíkovice v&nbsp;Krkonoších.
+          </p>
+        </div>
+        <div class="info__image">
+          <img
+            src="Pictures/3%20doplnena.jpg"
+            alt="Resort Mlýn Herlíkovice – apartmán kuchyň a obývací pokoj"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PRIZE
+  ============================================= -->
+  <section class="prize" aria-labelledby="prize-heading">
+    <div class="container container--wide">
+      <div class="prize__header">
+        <span class="section-label">Co vyhrajete</span>
+        <h2 id="prize-heading">Cena pro 5 výherců</h2>
+        <p>Pobyt v resortu Mlýn Herlíkovice, Herlíkovice u&nbsp;Špindlerova Mlýna</p>
+      </div>
+
+      <div class="prize__grid">
+        <!-- Card 1 -->
+        <div class="prize__card">
+          <div class="prize__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3>Pobyt na 2 noci</h3>
+          <p>Pro 2 osoby v moderním horském resortu s celoroční dostupností</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="prize__card">
+          <div class="prize__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h3>Apartmán 2 kk</h3>
+          <p>Moderně vybavený apartmán s plnou výbavou a výhledem na hory</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="prize__card">
+          <div class="prize__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Wellness pro 2</h3>
+          <p>1× vstup do wellness pro 2 osoby zdarma v ceně pobytu</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="prize__card">
+          <div class="prize__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/>
+            </svg>
+          </div>
+          <h3>Krkonoše</h3>
+          <p>Klidná lokalita Herlíkovice u&nbsp;Špindlerova Mlýna, celoroční využití</p>
+        </div>
+      </div>
+
+      <div class="prize__images" aria-hidden="true">
+        <div class="prize__img-wrap">
+          <img src="Pictures/1ab.jpg" alt="Apartmán – ložnice" loading="lazy" />
+        </div>
+        <div class="prize__img-wrap">
+          <img src="Pictures/8-7.jpg" alt="Wellness – vířivka" loading="lazy" />
+        </div>
+        <div class="prize__img-wrap">
+          <img src="Pictures/3%20doplnena.jpg" alt="Apartmán – obývací pokoj a kuchyň" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       QUIZ
+  ============================================= -->
+  <section class="quiz" id="quiz" aria-labelledby="quiz-heading">
+    <div class="container">
+      <div class="quiz__header">
+        <span class="section-label">Realitní kvíz</span>
+        <h2 id="quiz-heading">3 otázky do slosování</h2>
+        <p>Správné odpovědi nejsou podmínkou účasti – jen se pobavte.</p>
+      </div>
+
+      <!-- Progress -->
+      <div class="quiz__progress" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-label="Postup kvízu" id="quizProgress">
+        <div class="quiz__progress-bar">
+          <div class="quiz__progress-fill" id="quizProgressFill" style="width: 0%"></div>
+        </div>
+        <span class="quiz__progress-label" id="quizProgressLabel">0 / 3</span>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="quiz__question" id="q1-block" role="group" aria-labelledby="q1-text">
+        <div class="quiz__q-number">Otázka 1 ze 3</div>
+        <div class="quiz__q-text" id="q1-text">
+          Kdy vzniká vlastnické právo k&nbsp;nemovitosti při jejím převodu?
+        </div>
+        <div class="quiz__options">
+          <label class="quiz__option">
+            <input type="radio" name="question1" value="a" required />
+            <span class="quiz__option-label">Podpisem smlouvy</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="question1" value="b" />
+            <span class="quiz__option-label">Zaplacením kupní ceny</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="question1" value="c" />
+            <span class="quiz__option-label">Zápisem do katastru nemovitostí</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz__question" id="q2-block" role="group" aria-labelledby="q2-text">
+        <div class="quiz__q-number">Otázka 2 ze 3</div>
+        <div class="quiz__q-text" id="q2-text">
+          Jaký je hlavní účel advokátní úschovy při koupi nemovitosti?
+        </div>
+        <div class="quiz__options">
+          <label class="quiz__option">
+            <input type="radio" name="question2" value="a" required />
+            <span class="quiz__option-label">Snížení kupní ceny</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="question2" value="b" />
+            <span class="quiz__option-label">Zajištění bezpečného převodu finančních prostředků</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="question2" value="c" />
+            <span class="quiz__option-label">Zrychlení stavebního řízení</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz__question" id="q3-block" role="group" aria-labelledby="q3-text">
+        <div class="quiz__q-number">Otázka 3 ze 3</div>
+        <div class="quiz__q-text" id="q3-text">
+          Co obvykle zvyšuje atraktivitu investičního apartmánu?
+        </div>
+        <div class="quiz__options">
+          <label class="quiz__option">
+            <input type="radio" name="question3" value="a" required />
+            <span class="quiz__option-label">Umístění v turisticky vyhledávané lokalitě</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="question3" value="b" />
+            <span class="quiz__option-label">Počet dekorací v interiéru</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="question3" value="c" />
+            <span class="quiz__option-label">Typ klik u dveří</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTACT FORM
+  ============================================= -->
+  <section class="form-section" id="contact" aria-labelledby="form-heading">
+    <div class="container">
+      <div class="form-section__header">
+        <span class="section-label">Krok 2 ze 2</span>
+        <h2 id="form-heading">Kontaktní údaje</h2>
+        <p>Vyplňte své údaje pro zařazení do slosování.</p>
+      </div>
+
+      <form id="contestForm" novalidate>
+        <input type="hidden" name="access_key" value="e08f12e0-19b6-4bb5-888b-d80740ec7ba1" />
+        <!-- Honeypot antispam – boti pole vyplní, lidé ne; Web3Forms submission odmítne -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none;" aria-hidden="true" tabindex="-1" />
+        <div class="form-grid">
+          <!-- First name -->
+          <div class="form-field" id="field-firstName">
+            <label for="firstName">Jméno <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jan" autocomplete="given-name" required />
+            <span class="field-error" role="alert">Prosím vyplňte jméno.</span>
+          </div>
+
+          <!-- Last name -->
+          <div class="form-field" id="field-lastName">
+            <label for="lastName">Příjmení <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="Novák" autocomplete="family-name" required />
+            <span class="field-error" role="alert">Prosím vyplňte příjmení.</span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-field form-field--full" id="field-email">
+            <label for="email">E-mailová adresa <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jan.novak@email.cz" autocomplete="email" required />
+            <span class="field-error" role="alert">Prosím zadejte platnou e-mailovou adresu.</span>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-field form-field--full" id="field-phone">
+            <label for="phone">Telefonní číslo <span class="req" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+420 600 000 000" autocomplete="tel" required />
+            <span class="field-error" role="alert">Prosím zadejte telefonní číslo.</span>
+          </div>
+
+          <!-- Consent -->
+          <div class="form-field form-field--full" id="field-consent">
+            <label class="consent-wrapper" for="consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <span class="consent-text">
+                <strong>Souhlasím se zpracováním osobních údajů</strong> pro účely soutěže. Mé údaje budou použity výhradně k realizaci soutěže a kontaktování výherců.
+                <a href="pravidla_souteze_final.pdf" target="_blank" rel="noopener">Pravidla soutěže</a> &middot; <a href="gdpr_zasady_final_v2.pdf" target="_blank" rel="noopener">Zásady ochrany osobních údajů</a>
+              </span>
+            </label>
+            <span class="field-error" role="alert">Souhlas se zpracováním osobních údajů je povinný.</span>
+          </div>
+        </div>
+
+        <p class="form-note">
+          Osobní údaje budou použity pouze pro účely soutěže a kontaktování výherců. Zpracování probíhá v souladu s GDPR.
+        </p>
+
+        <!-- Validation summary -->
+        <div class="form-error-summary" id="errorSummary" role="alert">
+          Prosím zkontrolujte, zda jste odpověděli na všechny otázky kvízu a vyplnili všechna povinná pole.
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn" disabled aria-busy="false">
+          <span class="btn-text">Odeslat a zapojit se do slosování</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+
+        <!-- Chyba odeslání + mailto fallback -->
+        <div class="submit-error" id="submitError" role="alert">
+          <p>Formulář se nepodařilo odeslat automaticky. Použijte prosím záložní možnost níže nebo nás kontaktujte přímo na <strong>info@langmeier.cz</strong>.</p>
+          <a class="btn-mailto" id="btnMailto" href="#" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            Odeslat přes e-mailového klienta
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =============================================
+       THANK YOU
+  ============================================= -->
+  <section id="thankyou" aria-live="polite" aria-atomic="true">
+    <div class="thankyou__inner">
+      <div class="thankyou__icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h2>Děkujeme za účast.</h2>
+      <div class="thankyou__divider"></div>
+      <p>
+        Vaše odpovědi jsme přijali a zařadili Vás do slosování.
+      </p>
+      <p>
+        Výherce budeme kontaktovat e-mailem nebo telefonicky.
+      </p>
+      <p class="thankyou__sign">
+        Tým Langmeier &amp; Co.
+      </p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer class="footer">
+    <div class="container container--wide">
+      <div class="footer__row">
+        <span>© 2025 Langmeier &amp; Co., advokátní kancelář</span>
+        <span>
+          <a href="pravidla_souteze_final.pdf" target="_blank" rel="noopener">Pravidla soutěže</a>
+          &nbsp;·&nbsp;
+          <a href="gdpr_zasady_final_v2.pdf" target="_blank" rel="noopener">Ochrana osobních údajů</a>
+        </span>
+        <span>Partner: <a href="https://www.mlyn-herlikovice.cz/cs/" target="_blank" rel="noopener noreferrer">Mlýn Herlíkovice</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       JAVASCRIPT
+  ============================================= -->
+  <script>
+    'use strict';
+
+    /* =============================================
+       GOOGLE SHEETS EXPORT
+       TODO: Sem vložit webhook URL z Make/Zapier/n8n pro ukládání do Google Sheets.
+       Návod Make: Scenarios → Create → Webhook → JSON → Google Sheets (Add Row)
+       Návod Zapier: Zap → Trigger: Webhooks → Action: Google Sheets (Create Spreadsheet Row)
+    ============================================= */
+    var GOOGLE_SHEETS_WEBHOOK_URL = 'DOPLNIT_WEBHOOK_URL_Z_MAKE_NEBO_ZAPIER';
+
+    /* =============================================
+       TRACKING / ANALYTIKA
+       Tracking nesmí nikdy přerušit hlavní flow.
+       Každé volání je obaleno try/catch.
+    ============================================= */
+
+    function trackEvent(eventName, payload) {
+      payload = payload || {};
+      try {
+        console.log('TRACK EVENT:', eventName, payload);
+
+        // TODO: Google Analytics 4
+        // if (typeof gtag === 'function') gtag('event', eventName, payload);
+
+        // TODO: Meta Pixel
+        // if (typeof fbq === 'function') fbq('trackCustom', eventName, payload);
+
+        // TODO: LinkedIn Insight Tag
+        // if (typeof lintrk === 'function') lintrk('track', { conversion_id: YOUR_CONVERSION_ID });
+      } catch (trackErr) {
+        // Tracking chyba nikdy nezastaví stránku
+        console.warn('Tracking error:', trackErr);
+      }
+    }
+
+    /* ---- Quiz progress tracking ---- */
+
+    const quizRadios = document.querySelectorAll('.quiz__question input[type="radio"]');
+    const quizBlocks = document.querySelectorAll('.quiz__question');
+    const progressFill = document.getElementById('quizProgressFill');
+    const progressLabel = document.getElementById('quizProgressLabel');
+    const progressBar = document.getElementById('quizProgress');
+
+    function getAnsweredCount() {
+      const answered = new Set();
+      document.querySelectorAll('.quiz__question input[type="radio"]:checked')
+        .forEach(r => answered.add(r.name));
+      return answered.size;
+    }
+
+    function updateProgress() {
+      const count = getAnsweredCount();
+      const pct = (count / 3) * 100;
+      progressFill.style.width = pct + '%';
+      progressLabel.textContent = count + ' / 3';
+      progressBar.setAttribute('aria-valuenow', count);
+
+      // Mark blocks as answered
+      quizBlocks.forEach(block => {
+        const name = block.querySelector('input[type="radio"]')?.name;
+        const checked = name && document.querySelector(`input[name="${name}"]:checked`);
+        block.classList.toggle('is-answered', !!checked);
+      });
+
+      updateSubmitState();
+    }
+
+    quizRadios.forEach(r => r.addEventListener('change', function () {
+      // EVENT: quiz_answer_progress — odesílá se po zodpovězení každé otázky
+      trackEvent('quiz_answer_progress', {
+        question: parseInt(this.name.replace('question', ''), 10),
+        answer: this.value,
+      });
+      updateProgress();
+    }));
+
+    /* ---- Form live validation & submit-enable logic ---- */
+
+    const form = document.getElementById('contestForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const fields = {
+      firstName: document.getElementById('firstName'),
+      lastName:  document.getElementById('lastName'),
+      email:     document.getElementById('email'),
+      phone:     document.getElementById('phone'),
+      consent:   document.getElementById('consent'),
+    };
+
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function isEmailValid(v) { return EMAIL_RE.test(v.trim()); }
+    function isPhoneValid(v)  { return v.replace(/[\s\-\+\(\)]/g, '').length >= 9; }
+
+    function isFormComplete() {
+      return (
+        fields.firstName.value.trim().length > 0 &&
+        fields.lastName.value.trim().length  > 0 &&
+        isEmailValid(fields.email.value) &&
+        isPhoneValid(fields.phone.value) &&
+        fields.consent.checked &&
+        getAnsweredCount() === 3
+      );
+    }
+
+    function updateSubmitState() {
+      submitBtn.disabled = !isFormComplete();
+    }
+
+    // Live input listeners
+    Object.values(fields).forEach(el => {
+      el.addEventListener('input',  updateSubmitState);
+      el.addEventListener('change', updateSubmitState);
+    });
+
+    // Inline field validation on blur (UX: only after user leaves field)
+    function validateField(id, isValid) {
+      const wrapper = document.getElementById('field-' + id);
+      const input   = fields[id];
+      if (!wrapper) return;
+      const invalid = !isValid(input.value, input);
+      input.classList.toggle('is-invalid', invalid);
+      wrapper.classList.toggle('is-invalid', invalid);
+    }
+
+    fields.firstName.addEventListener('blur', () =>
+      validateField('firstName', v => v.trim().length > 0));
+
+    fields.lastName.addEventListener('blur', () =>
+      validateField('lastName', v => v.trim().length > 0));
+
+    fields.email.addEventListener('blur', () =>
+      validateField('email', v => isEmailValid(v)));
+
+    fields.phone.addEventListener('blur', () =>
+      validateField('phone', v => isPhoneValid(v)));
+
+    /* ---- Form submit ---- */
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Final guard (button should already be disabled, but double-check)
+      if (!isFormComplete()) {
+        document.getElementById('errorSummary').classList.add('is-visible');
+        return;
+      }
+
+      document.getElementById('errorSummary').classList.remove('is-visible');
+      document.getElementById('submitError').classList.remove('is-visible');
+
+      const timestamp = new Date().toISOString();
+
+      // Sběr dat formuláře – standardizovaná pole pro Web3Forms i Google Sheets
+      const formData = {
+        source:       'newsletter_soutez_herlikovice',
+        submitted_at: timestamp,
+        first_name:   fields.firstName.value.trim(),
+        last_name:    fields.lastName.value.trim(),
+        email:        fields.email.value.trim().toLowerCase(),
+        phone:        fields.phone.value.trim(),
+        question_1:   document.querySelector('input[name="question1"]:checked')?.value ?? '—',
+        question_2:   document.querySelector('input[name="question2"]:checked')?.value ?? '—',
+        question_3:   document.querySelector('input[name="question3"]:checked')?.value ?? '—',
+        consent_gdpr: fields.consent.checked,
+        user_agent:   navigator.userAgent || '—',
+      };
+
+      // -----------------------------------------------------------------------
+      // PRIMÁRNÍ CESTA — Web3Forms
+      // Docs: https://web3forms.com/
+      // Příjemce e-mailu se nastavuje v účtu Web3Forms (app.web3forms.com),
+      // není součástí payloadu z bezpečnostních důvodů.
+      // -----------------------------------------------------------------------
+      const web3Payload = Object.assign({
+        access_key: document.querySelector('input[name="access_key"]').value,
+        subject:    'Nový soutěžní formulář – Langmeier & Co.',
+      }, formData);
+
+      // -----------------------------------------------------------------------
+      // FALLBACK — mailto (pouze při chybě Web3Forms)
+      // Otevře e-mailového klienta s předvyplněnými daty.
+      // -----------------------------------------------------------------------
+      function buildMailtoFallback() {
+        var subject = encodeURIComponent('Nový soutěžní formulář – Langmeier & Co.');
+        var body = encodeURIComponent([
+          '=== KONTAKTNÍ ÚDAJE ===',
+          'Jméno:     ' + formData.first_name,
+          'Příjmení:  ' + formData.last_name,
+          'E-mail:    ' + formData.email,
+          'Telefon:   ' + formData.phone,
+          '',
+          '=== ODPOVĚDI ===',
+          '1. ' + formData.question_1,
+          '2. ' + formData.question_2,
+          '3. ' + formData.question_3,
+          '',
+          '=== METADATA ===',
+          'Datum:      ' + formData.submitted_at,
+          'User-Agent: ' + formData.user_agent,
+          'Souhlas:    ' + (formData.consent_gdpr ? 'ANO' : 'NE'),
+        ].join('\n'));
+        return 'mailto:info@langmeier.cz?subject=' + subject + '&body=' + body;
+      }
+
+      // DEBUG — všechna odesílaná data (odstranit před ostrým spuštěním)
+      console.log('[SUBMIT] formData:', formData);
+      console.log('[SUBMIT] web3Payload:', web3Payload);
+      console.log('[SUBMIT] Google Sheets URL:', GOOGLE_SHEETS_WEBHOOK_URL);
+
+      // Loading state
+      submitBtn.classList.add('is-loading');
+      submitBtn.setAttribute('aria-busy', 'true');
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body:    JSON.stringify(web3Payload),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || 'Web3Forms error ' + response.status);
+        }
+
+        // EVENT: quiz_submit — úspěšné odeslání
+        trackEvent('quiz_submit', { timestamp: timestamp });
+
+        // Google Sheets export — neblokující, chyba nezastaví thank-you stav
+        if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL !== 'DOPLNIT_WEBHOOK_URL_Z_MAKE_NEBO_ZAPIER') {
+          fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(formData),
+          }).catch(function (sheetsErr) {
+            console.warn('Google Sheets webhook error:', sheetsErr.message);
+          });
+        }
+
+        showThankYou();
+
+      } catch (err) {
+        // EVENT: quiz_submit_error — chyba při odesílání
+        trackEvent('quiz_submit_error', { message: err.message });
+        console.warn('Web3Forms error:', err.message);
+
+        // Odblokovat submit + zobrazit chybový blok s mailto fallbackem
+        submitBtn.classList.remove('is-loading');
+        submitBtn.setAttribute('aria-busy', 'false');
+        submitBtn.disabled = false;
+
+        document.getElementById('btnMailto').href = buildMailtoFallback();
+        var submitError = document.getElementById('submitError');
+        submitError.classList.add('is-visible');
+        submitError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+
+    function showThankYou() {
+      // Hide all main sections
+      document.querySelector('.hero').style.display      = 'none';
+      document.querySelector('.info').style.display      = 'none';
+      document.querySelector('.prize').style.display     = 'none';
+      document.querySelector('.quiz').style.display      = 'none';
+      document.querySelector('.form-section').style.display = 'none';
+
+      const ty = document.getElementById('thankyou');
+      ty.classList.add('is-visible');
+      ty.scrollIntoView({ behavior: 'smooth' });
+
+      document.title = 'Děkujeme za účast | Langmeier & Co.';
+    }
+
+    /* ---- Smooth scroll for CTA buttons ---- */
+
+    document.querySelectorAll('a[href="#quiz"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        // EVENT: quiz_start — klik na „Začít kvíz"
+        trackEvent('quiz_start');
+        document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Initial state
+    updateProgress();
+  </script>
+</body>
+</html>
